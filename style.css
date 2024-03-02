@@ -152,13 +152,13 @@ html{
 .home .home-content a:hover{
     color: #4070f4;
     background: none;
- }
+}
 /*All similar styling code*/
 section{
     padding: 100px 0;
 }
 
-.about, .skills, .projects, .contact, footer{
+.about, .skills, .projects, .contact, .achievements, footer{
     font-family: 'Poppins', sans-serif;
 }
 .about .about-content, .projects .projects-content,
@@ -315,9 +315,14 @@ section{
 }
 
 .skills-content .right .html::before{
+    width: 95%;
+}
+.skills-content .right .tailwind::before{
     width: 90%;
 }
-
+.skills-content .right .bootstrap::before{
+    width: 95%;
+}
 .skills-content .right .php::before{
     width: 90%;
 }
@@ -328,12 +333,15 @@ section{
     width: 80%;
 }
 .skills-content .right .vuejs::before{
-    width: 80%;
+    width: 85%;
 }
 .skills-content .right .reactjs::before{
     width: 80%;
 }
 .skills-content .right .mysql::before{
+    width: 90%;
+}
+.skills-content .right .mango::before{
     width: 90%;
 }
 /* Project section start*/
@@ -346,7 +354,16 @@ section{
     display: inline;
     margin-right: 10px;
 }
-
+.achievements{
+    color: black;
+    background: white;
+}
+.achievements .title::before{
+    background: black;
+}
+.achive-title,.achive-para{
+    color:white;
+}
 .projects{
     color: white;
     background: black;
@@ -354,9 +371,10 @@ section{
 .projects .title::before{
     background: white;
 }
+
 .projects .title::after{
     background: black;
-    content: "My Projects";
+    content: "What I have done";
 }
 .projects .projects-content .card{
     width: calc(33% - 20px);
@@ -421,6 +439,57 @@ section{
 .projects .projects-content .card .box .nav2:hover{
     color: #4070f4;
     background: none;
+}
+
+/* Achievements */
+
+.achievements .carousel .card{
+    background: #222;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+}
+.achievements .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.achievements .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.achievements .carousel .card img{
+    height: 300px;
+    width: 300px;
+    border: 3px solid #4070f4;
+}
+.achievements .carousel .card:hover .box{
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid #4070f4!important;
+    transition: all 0.3s ease;
+}
+
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+
+.owl-dot.active, .owl-dot:hover{
+    background: #4070f4!important;
 }
 
 /* Contact section styling */
@@ -535,16 +604,28 @@ footer span a:hover{
     .home .max-width{
         margin-left: 0px;
     }
+    .achievements .carousel .card img{
+        height: 200px;
+        width: 200px;
+    }
 }
 @media (max-width: 1104px) {
     .about .about-content .left img{
         height: 350px;
         width: 350px;
     }
+    .achievements .carousel .card img{
+        height: 200px;
+        width: 200px;
+    }
 }
 @media (max-width: 991px) {
     .max-width{
         padding: 0 50px;
+    }
+    .achievements .carousel .card img{
+        height: 200px;
+        width: 200px;
     }
 }
 @media (max-width: 947px) {
@@ -609,6 +690,10 @@ footer span a:hover{
     .contact .contact-content .column{
         width: 100%;
         margin-bottom: 35px;
+    }
+    .achievements .carousel .card img{
+        height: 200px;
+        width: 200px;
     }
 }
 @media (max-width: 690px){
